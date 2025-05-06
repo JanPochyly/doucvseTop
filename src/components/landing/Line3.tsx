@@ -47,7 +47,7 @@ const Line3 = () => {
         </div>
       </div>
 
-      <div className="absolute bottom-[4%] left-[40%] md:left-[50%] lg:left-[55%] text-left">
+      <div className="absolute bottom-[0%] left-[10%] md:left-[50%] lg:left-[55%] text-left mt-10 md:mt-0">
         <div className="flex items-center gap-4">
           <span className="text-[80px] leading-none font-bold text-[#FF0149]">
             03

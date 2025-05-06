@@ -11,10 +11,10 @@ const Pin = () => {
           Co o nás říkají naši uživatelé
         </h2>
       </div>
-      <div className="flex flex-col md:flex-row gap-8 justify-center items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:flex gap-8 justify-center items-center">
         <img src="/img/landing/Pin1.svg" alt="Pin1" className="w-auto h-auto" />
-        <img src="/img/landing/Pin2.svg" alt="Pin2" className="w-auto h-auto md:-ml-4" />
-        <img src="/img/landing/Pin3.svg" alt="Pin3" className="w-auto h-auto" />
+        <img src="/img/landing/Pin2.svg" alt="Pin2" className="w-auto h-auto sm:-ml-4" />
+        <img src="/img/landing/Pin3.svg" alt="Pin3" className="w-auto h-auto sm:col-span-2 xl:col-span-1" />
       </div>
     </section>
   );

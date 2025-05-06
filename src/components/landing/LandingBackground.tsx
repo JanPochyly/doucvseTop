@@ -1,6 +1,6 @@
 const LandingBackground = () => {
     return (
-        <div className="top-0 left-0 h-full z-[0] relative w-full min-h-[1200px]">
+        <div className="top-0 left-0 h-full -z-10 absolute w-full max-w-screen overflow-x-hidden min-h-[1200px] pointer-events-none select-none">
           <>
             <img
               src="/img/landing/svetle/Clock.svg"

@@ -18,7 +18,7 @@ export default async function Home() {
   const session = await getServerSession(authOptions);
 
   return (
-    <main className="relative w-full min-h-screen text-black z-0">
+    <main className="relative w-full min-h-screen text-black z-0 bg-[#F3F8FF] ">
       <div className="absolute top-0 left-0 w-full h-full -z-10 pointer-events-none select-none">
         <LandingBackground />
       </div>

@@ -11,11 +11,12 @@ const config: Config = {
       center: true,
       padding: '1.5rem',
       screens: {
-        'sm': '640px',
+        'xs': '360px',
+        'sm': '480px',
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
-        '2xl': '1360px'
+        '2xl': '1440px'
       }
     },
     extend: {

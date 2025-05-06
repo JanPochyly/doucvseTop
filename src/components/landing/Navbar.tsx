@@ -7,7 +7,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className="w-full bg-transparent py-6 px-6 md:px-12">
+    <header className="w-full bg-transparent py-6 px-6 sm:px-12 overflow-x-hidden">
       <div className="max-w-screen-xl mx-auto flex justify-between items-center mb-[100px]">
         <div className="flex items-center gap-4 ml-[-0px]">
           <Link href="/">
@@ -79,7 +79,7 @@ const Navbar = () => {
       </div>
 
       {menuOpen && (
-        <div className="md:hidden flex flex-col items-start gap-4 px-6 mt-4">
+        <div className="sm:hidden flex flex-col items-start gap-4 px-6 mt-4">
           <Link href="#jak-to-funguje" className="text-black text-[20px] font-medium hover:text-blue-600">
             Jak to funguje?
           </Link>

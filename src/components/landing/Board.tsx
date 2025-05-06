@@ -1,10 +1,8 @@
-
-
 import Image from 'next/image';
 
 const Board = () => {
   return (
-    <section className="z-[1] mt-60 md:mt-45 w-full flex flex-col md:flex-row justify-center items-center md:items-center px-6 md:px-20 py-20 md:py-36 gap-6 md:gap-10">
+    <section className="z-[1] mt-60 md:mt-45 w-full max-w-[90vw] lg:max-w-6xl mx-auto flex flex-col lg:flex-row justify-between items-center px-4 sm:px-6 md:px-8 lg:px-10 py-20 md:py-36 gap-6 lg:gap-10 overflow-hidden">
       <div className="flex-1 max-w-xl">
         <p className="text-sm font-semibold mb-1">
           <span className="bg-gradient-to-r from-[#0072FA] via-[#1D0A42] to-[#FF0049] bg-clip-text text-transparent">Zaregistruj se ještě dnes </span>
@@ -49,7 +47,7 @@ const Board = () => {
           alt="Board illustration"
           width={300}
           height={240}
-          className="w-full h-auto max-w-xs mx-auto z-10"
+          className="w-full h-auto max-w-[280px] sm:max-w-sm mx-auto z-10"
         />
       </div>
     </section>

@@ -18,7 +18,7 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
   return (
     <html lang="en">
-      <body>
+      <body className="overflow-x-hidden">
         <main>
           <SessionProvider session={session}>
             <Providers>
