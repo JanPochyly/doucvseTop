@@ -130,7 +130,7 @@ const RegisterDetailPage = () => {
             htmlFor="role"
             className="block text-sm font-medium text-gray-900 mb-1"
           >
-            Select Role
+            Vyber svou fakult
           </label>
           <select
             {...register("faculty", { required: true })}
@@ -270,9 +270,9 @@ const RegisterDetailPage = () => {
           isLoading={isLoading}
           type="submit"
           variant="default"
-          className="bg-indigo-600"
+          className="bg-[#FF0049]"
         >
-          Add
+          Dokončit
         </Button>
       </form>
     </div>

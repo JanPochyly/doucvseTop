@@ -98,10 +98,17 @@ const RegisterPage = () => {
   
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
+      <div className="text-center mb-6">
+        <h2 className="text-2xl sm:text-3xl font-bold text-black">
+          Chceš si <span className="text-[#FF0049]">přivydělat</span> nebo{" "}
+          <span className="text-[#0072FA]">zandat zkoušku</span>?<br />
+          Začni teď!
+        </h2>
+      </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-md min-w-96 p-8 bg-white shadow-lg rounded-2xl flex flex-col justify-center space-y-6 "
+        className="max-w-md min-w-96 p-8 bg-white shadow-lg rounded-2xl flex flex-col justify-center space-y-6"
       >
         <h1 className="text-3xl font-bold text-gray-700">Register</h1>
         <div className="flex flex-col">
@@ -170,7 +177,7 @@ const RegisterPage = () => {
         </div>
         <div className="flex flex-col">
           <label className="block text-sm font-medium text-gray-900 mb-1">
-            Select Role
+            Vyber si roli
           </label>
           <div className="flex space-x-2">
             <button
@@ -178,7 +185,7 @@ const RegisterPage = () => {
               onClick={() => setValue("role", "teacher")}
               className={`flex-1 py-2 px-4 rounded-lg border ${
                 watch("role") === "teacher"
-                  ? "bg-blue-500 text-white"
+                  ? "bg-[#0072FA] text-white"
                   : "bg-gray-100 text-gray-700"
               }`}
             >
@@ -189,7 +196,7 @@ const RegisterPage = () => {
               onClick={() => setValue("role", "student")}
               className={`flex-1 py-2 px-4 rounded-lg border ${
                 watch("role") === "student"
-                  ? "bg-blue-500 text-white"
+                  ? "bg-[#0072FA] text-white"
                   : "bg-gray-100 text-gray-700"
               }`}
             >
@@ -201,9 +208,9 @@ const RegisterPage = () => {
           isLoading={isLoading}
           type="submit"
           variant="default"
-          className="bg-indigo-600"
+          className="bg-[#FF0049]"
         >
-          Add
+          Pokračovat
         </Button>
       </form>
     </div>
