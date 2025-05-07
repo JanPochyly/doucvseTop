@@ -98,7 +98,7 @@ const RegisterPage = () => {
   
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#F3F8FF] px-4">
       <div className="text-center mb-6">
         <h2 className="text-2xl sm:text-3xl font-bold text-black">
           Chceš si <span className="text-[#FF0049]">přivydělat</span> nebo{" "}
