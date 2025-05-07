@@ -19,6 +19,8 @@ const RegisterPage = () => {
   const {
     register,
     handleSubmit,
+    setValue,
+    watch
   } = useForm<FormData>();
 
 
@@ -155,7 +157,7 @@ const RegisterPage = () => {
             htmlFor="password"
             className="block text-sm font-medium text-gray-900 mb-1"
           >
-            Password
+            Heslo
           </label>
           <input
             {...register("password")}
@@ -163,25 +165,37 @@ const RegisterPage = () => {
             id="password"
             required
             className="block w-full rounded-md border border-gray-300 py-2 px-3 text-gray-900 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            placeholder="Enter your password"
+            placeholder="Napiš své heslo"
           />
         </div>
         <div className="flex flex-col">
-          <label
-            htmlFor="role"
-            className="block text-sm font-medium text-gray-900 mb-1"
-          >
+          <label className="block text-sm font-medium text-gray-900 mb-1">
             Select Role
           </label>
-          <select
-            {...register("role", { required: true })}
-            id="role"
-            required
-            className="block w-full rounded-md border border-gray-300 py-2 px-3 text-gray-900 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-          >
-            <option value="student">Student</option>
-            <option value="teacher">Teacher</option>
-          </select>
+          <div className="flex space-x-2">
+            <button
+              type="button"
+              onClick={() => setValue("role", "teacher")}
+              className={`flex-1 py-2 px-4 rounded-lg border ${
+                watch("role") === "teacher"
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-100 text-gray-700"
+              }`}
+            >
+              učitel
+            </button>
+            <button
+              type="button"
+              onClick={() => setValue("role", "student")}
+              className={`flex-1 py-2 px-4 rounded-lg border ${
+                watch("role") === "student"
+                  ? "bg-blue-500 text-white"
+                  : "bg-gray-100 text-gray-700"
+              }`}
+            >
+              student
+            </button>
+          </div>
         </div>
         <Button
           isLoading={isLoading}
