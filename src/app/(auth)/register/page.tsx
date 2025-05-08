@@ -98,9 +98,9 @@ const RegisterPage = () => {
   
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-[#F3F8FF] px-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-[#F3F8FF] px-2 sm:px-4">
       <div className="text-center mb-6">
-        <h2 className="text-2xl sm:text-3xl font-bold text-black">
+        <h2 className="text-xl sm:text-3xl font-bold text-black">
           Chceš si <span className="text-[#FF0049]">přivydělat</span> nebo{" "}
           <span className="text-[#0072FA]">zandat zkoušku</span>?<br />
           Začni teď!
@@ -108,7 +108,7 @@ const RegisterPage = () => {
       </div>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="max-w-md min-w-96 p-8 bg-white shadow-lg rounded-2xl flex flex-col justify-center space-y-6"
+        className="w-full max-w-md p-6 sm:p-8 bg-white shadow-lg rounded-2xl flex flex-col justify-center space-y-6"
       >
         <h1 className="text-3xl font-bold text-gray-700">Register</h1>
         <div className="flex flex-col">
@@ -208,7 +208,7 @@ const RegisterPage = () => {
           isLoading={isLoading}
           type="submit"
           variant="default"
-          className="bg-[#FF0049]"
+          className="bg-[#FF0049] text-sm sm:text-base px-4 py-2 sm:px-6 sm:py-3"
         >
           Pokračovat
         </Button>
