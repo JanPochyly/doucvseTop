@@ -34,14 +34,14 @@ const MobileChatLayout = ({friends, session, sidebarOptions, unseenRequestCount}
     setOpen(false)
   }, [pathname])
   return (
-    <div className="fixed bg-zinc-50 border-b border-zinc-200 top-0 inset-x-0 py-2 px-4">
+    <div className="fixed bg-zinc-50 border-b border-zinc-200 top-0 inset-x-0 py-2 px-4 z-50">
       <div className="w-full flex justify-between items-center">
         <Link
           href="/dashboard"
           className={buttonVariants({ variant: "ghost" })}
         >
           <Image
-            src="img/landing/Logo-LandingBetter.svg"
+            src="/img/landing/Logo-LandingBetter.svg"
             alt="Logo"
             width={40}
             height={40}
@@ -52,7 +52,7 @@ const MobileChatLayout = ({friends, session, sidebarOptions, unseenRequestCount}
         </Button>
       </div>
       <Transition.Root show={open} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={setOpen}>
+        <Dialog as="div" className="relative z-50" onClose={setOpen}>
           <div className="fixed inset-0" />
 
           <div className="fixed inset-0 overflow-hidden">
@@ -104,7 +104,7 @@ const MobileChatLayout = ({friends, session, sidebarOptions, unseenRequestCount}
                             <li className="flex items-start gap-4 mt-6">
                               <div className="relative w-16 h-16">
                                 <Image
-                                  src="img/landing/Logo-LandingBetter.svg"
+                                  src="/img/landing/Logo-LandingBetter.svg"
                                   alt="Logo"
                                   width={64}
                                   height={64}

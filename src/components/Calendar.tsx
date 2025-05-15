@@ -173,7 +173,7 @@ const CustomCalendar: React.FC<Props> = ({
                               className={`p-2 rounded ${
                                 field.value.toDateString() ===
                                 date.toDateString()
-                                  ? "bg-indigo-600 text-white"
+                                  ? "bg-[#0072FA] text-white"
                                   : isDisabled
                                   ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                                   : "bg-gray-200 text-gray-900"
@@ -199,7 +199,7 @@ const CustomCalendar: React.FC<Props> = ({
                       }}
                       className={`p-2 rounded transition-all hover:bg-indigo-300 ${
                         selectedTimeSlot === slot
-                          ? "bg-indigo-600 text-white"
+                          ? "bg-[#0072FA] text-white"
                           : "bg-gray-200 text-gray-900"
                       }`}
                     >
@@ -221,7 +221,7 @@ const CustomCalendar: React.FC<Props> = ({
                         onClick={() => setSelectedSubjects(subject)}
                         className={`p-2 rounded transition-all hover:bg-indigo-300 ${
                           selectedSubject.includes(subject)
-                            ? "bg-indigo-600 text-indigo-100 px-3 py-1 rounded-full text-sm font-bold"
+                            ? "bg-[#0072FA] text-indigo-100 px-3 py-1 rounded-full text-sm font-bold"
                             : "bg-indigo-100 text-indigo-500 px-3 py-1 rounded-full text-sm font-bold"
                         }`}
                       >
@@ -241,7 +241,7 @@ const CustomCalendar: React.FC<Props> = ({
                       variant="indigo"
                       className={`w-full py-2 px-4 rounded-lg text-center font-semibold transition-all ${
                         selectedSessionLength === 45
-                          ? "bg-indigo-600 text-white"
+                          ? "bg-[#0072FA] text-white"
                           : "bg-gray-200 text-gray-900 hover:bg-indigo-300"
                       }`}
                     >
@@ -256,7 +256,7 @@ const CustomCalendar: React.FC<Props> = ({
                       variant="indigo"
                       className={`w-full py-2 px-4 rounded-lg text-center font-semibold transition-all ${
                         selectedSessionLength === 60
-                          ? "bg-indigo-600 text-white"
+                          ? "bg-[#0072FA] text-white"
                           : "bg-gray-200 text-gray-900 hover:bg-indigo-300"
                       }`}
                     >
@@ -273,7 +273,7 @@ const CustomCalendar: React.FC<Props> = ({
                       variant="indigo"
                       className={`w-full py-2 px-4 rounded-lg text-center font-semibold transition-all ${
                         selectedSessionLength === 90
-                          ? "bg-indigo-600 text-white"
+                          ? "bg-[#0072FA] text-white"
                           : "bg-gray-200 text-gray-900 hover:bg-indigo-300"
                       }`}
                     >
@@ -288,7 +288,7 @@ const CustomCalendar: React.FC<Props> = ({
                       variant="indigo"
                       className={`w-full py-2 px-4 rounded-lg text-center font-semibold transition-all ${
                         selectedSessionLength === 120
-                          ? "bg-indigo-600 text-white"
+                          ? "bg-[#0072FA] text-white"
                           : "bg-gray-200 text-gray-900 hover:bg-indigo-300"
                       }`}
                     >
@@ -309,9 +309,8 @@ const CustomCalendar: React.FC<Props> = ({
                 </div>
                 <Button
                   disabled={!isFormValid}
-                  variant="indigo"
                   type="submit"
-                  className="px-4 py- text-white rounded-md"
+                  className="bg-gradient-to-r from-[#0072FA] via-[#1D0A42] to-[#FF0049] text-white px-6 py-3 rounded-xl font-semibold hover:text-black transition-colors"
                 >
                   poslat
                 </Button>
@@ -352,7 +351,7 @@ const CustomCalendar: React.FC<Props> = ({
                       }}
                       className={`p-2 rounded ${
                         field.value.toDateString() === date.toDateString()
-                          ? "bg-indigo-600 text-white"
+                          ? "bg-[#0072FA] text-white"
                           : isDisabled
                           ? "bg-gray-300 text-gray-500 cursor-not-allowed"
                           : "bg-gray-200 text-gray-900"
@@ -386,7 +385,7 @@ const CustomCalendar: React.FC<Props> = ({
                   }}
                   className={`p-2 rounded transition-all hover:bg-indigo-300 ${
                     selectedTimeSlot === slot
-                      ? "bg-indigo-600 text-white"
+                      ? "bg-[#0072FA] text-white"
                       : "bg-gray-200 text-gray-900"
                   }`}
                 >
@@ -397,7 +396,10 @@ const CustomCalendar: React.FC<Props> = ({
           </div>
         </div>
         {isAuth ? (
-          <Button variant="indigo" onClick={() => setIsOpen(true)}>
+          <Button
+            onClick={() => setIsOpen(true)}
+            className="bg-[#FF0049] text-white hover:bg-[#FF0049] hover:text-black transition-colors px-4 py-2 rounded-xl"
+          >
             Pokračovat
           </Button>
         ) : (

@@ -95,124 +95,139 @@ const Filters = () => {
     if (!isNaN(num)) setMaxPrice(String(num));
   };
 
-  return (
-    <div className="filters flex gap-x-4 mb-4">
-      <form className="flex gap-x-4" onSubmit={(e) => e.preventDefault()}>
-        <div className="flex justify-between items-center gap-4 w-full">
-          <div className="flex flex-col w-full">
-            <label htmlFor="faculty" className="text-xs text-gray-600 mb-1">
-              Fakulta:
-            </label>
-            <select
-              id="faculty"
-              value={faculty}
-              onChange={(e) => {
-                setFaculty(e.target.value);
-                updateSearchParams({ faculty: e.target.value });
-              }}
-              className="appearance-none border w-[200px] rounded px-2 py-1 pr-8 text-base"
-            >
-              <option value="">Všechny fakulty</option>
-              <option value="FFÚ">FFÚ</option>
-              <option value="FMW">FMW</option>
-              <option value="FPH">FPH</option>
-              <option value="FIS">FIS</option>
-              <option value="NF">NF</option>
-              <option value="FM">FM</option>
-            </select>
-          </div>
+  // Filter form JSX content
+  const filterFormContent = (
+    <div className="flex flex-col md:flex-row justify-between items-stretch gap-4 w-full">
+      <div className="flex flex-col w-full">
+        <label htmlFor="faculty" className="text-xs text-gray-600 mb-1 whitespace-nowrap">
+          Fakulta:
+        </label>
+        <select
+          id="faculty"
+          value={faculty}
+          onChange={(e) => {
+            setFaculty(e.target.value);
+            updateSearchParams({ faculty: e.target.value });
+          }}
+          className="appearance-none border rounded px-2 py-1 pr-8 text-base w-full"
+        >
+          <option value="">Všechny fakulty</option>
+          <option value="FFÚ">FFÚ</option>
+          <option value="FMW">FMW</option>
+          <option value="FPH">FPH</option>
+          <option value="FIS">FIS</option>
+          <option value="NF">NF</option>
+          <option value="FM">FM</option>
+        </select>
+      </div>
 
-          <div className="flex flex-col w-full">
-            <label htmlFor="subject" className="text-xs text-gray-600 mb-1">
-              Předmět:
-            </label>
-            <input
-              type="text"
-              id="subject"
-              value={subject}
-              onFocus={(e) => e.target.select()}
-              onChange={handleInputChange}
-              onKeyDown={(e) => e.key === "Enter" && updateSearchParams()}
-              onBlur={() => updateSearchParams()}
-              autoComplete="off"
-              className="border rounded px-2 py-1"
-            />
-            <div>
-              <div ref={dropdownRef} className="relative">
-                {suggestions.length > 0 && isSuggestionsOpen && (
-                  <ul className="border absolute w-full border-gray-300 mt-1 bg-white shadow-lg rounded-md max-h-80 overflow-y-auto">
-                    {suggestions.map((suggestion, index) => (
-                      <li
-                      
-                        key={suggestion}
-                        onClick={() => {handleSuggestionClick(suggestion);updateSearchParams({ subject: suggestion })}}
-                        className="block w-full rounded-md border border-gray-300 py-2 px-3 text-gray-900 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0072FA] focus:border-indigo-500 sm:text-sm cursor-pointer"
-                      >
-                        {suggestion}
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col w-full">
-            <label htmlFor="language" className="text-xs text-gray-600 mb-1">
-              jazyk:
-            </label>
-            <select
-              id="language"
-              value={language}
-              onChange={(e) => {
-                setLanguage(e.target.value);
-                updateSearchParams({ language: e.target.value });
-              }}
-              className="appearance-none border rounded w-full px-2 py-1 pr-8 text-base"
-            >
-              <option value="">Vsechny jazyky</option>
-              <option value="čeština">čeština</option>
-              <option value="slovenština">slovenština</option>
-              <option value="ukrajinština">ukrajinština</option>
-              <option value="angličtina">angličtina</option>
-            </select>
-          </div>
-
-          <div className="flex flex-col w-full">
-            <label htmlFor="maxPrice" className="text-xs text-gray-600 mb-1">
-              Max do:
-            </label>
-            <input
-              value={maxPrice}
-              id="maxPrice"
-              type="number"
-              onFocus={(e) => e.target.select()}
-              onChange={(e) => handleMaxPriceChange(e)}
-              onKeyDown={(e) => e.key === "Enter" && updateSearchParams()}
-              onBlur={() => updateSearchParams()}
-              className="border rounded px-2 py-1"
-            />
-          </div>
-
-          <div className="flex flex-col w-full">
-            <label htmlFor="format" className="text-xs text-gray-600 mb-1">
-              forma doučování:
-            </label>
-            <select
-              id="format"
-              value={format}
-              onChange={(e) => {
-                setFormat(e.target.value);
-                updateSearchParams({ format: e.target.value });
-              }}
-              className="appearance-none border rounded w-full px-2 py-1 pr-8 text-base"
-            >
-              <option value="">Je mi to jedno</option>
-              <option value="online">online</option>
-              <option value="osobne">osobne</option>
-            </select>
+      <div className="flex flex-col w-full">
+        <label htmlFor="subject" className="text-xs text-gray-600 mb-1 whitespace-nowrap">
+          Předmět:
+        </label>
+        <input
+          type="text"
+          id="subject"
+          value={subject}
+          onFocus={(e) => e.target.select()}
+          onChange={handleInputChange}
+          onKeyDown={(e) => e.key === "Enter" && updateSearchParams()}
+          onBlur={() => updateSearchParams()}
+          autoComplete="off"
+          className="border rounded px-2 py-1 w-full"
+        />
+        <div>
+          <div ref={dropdownRef} className="relative">
+            {suggestions.length > 0 && isSuggestionsOpen && (
+              <ul className="border absolute w-full border-gray-300 mt-1 bg-white shadow-lg rounded-md max-h-80 overflow-y-auto z-10">
+                {suggestions.map((suggestion, index) => (
+                  <li
+                    key={suggestion}
+                    onClick={() => {
+                      handleSuggestionClick(suggestion);
+                      updateSearchParams({ subject: suggestion });
+                    }}
+                    className="block w-full rounded-md border border-gray-300 py-2 px-3 text-gray-900 shadow-sm placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#0072FA] focus:border-indigo-500 sm:text-sm cursor-pointer"
+                  >
+                    {suggestion}
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
         </div>
+      </div>
+
+      <div className="flex flex-col w-full">
+        <label htmlFor="language" className="text-xs text-gray-600 mb-1 whitespace-nowrap">
+          Jazyk:
+        </label>
+        <select
+          id="language"
+          value={language}
+          onChange={(e) => {
+            setLanguage(e.target.value);
+            updateSearchParams({ language: e.target.value });
+          }}
+          className="appearance-none border rounded px-2 py-1 pr-8 text-base w-full"
+        >
+          <option value="">Všechny jazyky</option>
+          <option value="čeština">čeština</option>
+          <option value="slovenština">slovenština</option>
+          <option value="ukrajinština">ukrajinština</option>
+          <option value="angličtina">angličtina</option>
+        </select>
+      </div>
+
+      <div className="flex flex-col w-full">
+        <label htmlFor="maxPrice" className="text-xs text-gray-600 mb-1 whitespace-nowrap">
+          Max do:
+        </label>
+        <input
+          value={maxPrice}
+          id="maxPrice"
+          type="number"
+          onFocus={(e) => e.target.select()}
+          onChange={(e) => handleMaxPriceChange(e)}
+          onKeyDown={(e) => e.key === "Enter" && updateSearchParams()}
+          onBlur={() => updateSearchParams()}
+          className="border rounded px-2 py-1 w-full"
+        />
+      </div>
+
+      <div className="flex flex-col w-full">
+        <label htmlFor="format" className="text-xs text-gray-600 mb-1 whitespace-nowrap">
+          Forma doučování:
+        </label>
+        <select
+          id="format"
+          value={format}
+          onChange={(e) => {
+            setFormat(e.target.value);
+            updateSearchParams({ format: e.target.value });
+          }}
+          className="appearance-none border rounded px-2 py-1 pr-8 text-base w-full"
+        >
+          <option value="">Je mi to jedno</option>
+          <option value="online">online</option>
+          <option value="osobne">osobne</option>
+        </select>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="filters mb-4 pt-14">
+      <details className="w-full md:hidden">
+        <summary className="cursor-pointer bg-[#0072FA] text-white font-semibold text-md mb-4 px-4 py-2 rounded-xl shadow-md w-fit">
+          Filtry pro lepší výběr učitele
+        </summary>
+        <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+          {filterFormContent}
+        </form>
+      </details>
+      <form className="hidden md:flex gap-x-4 w-full" onSubmit={(e) => e.preventDefault()}>
+        {filterFormContent}
       </form>
     </div>
   );

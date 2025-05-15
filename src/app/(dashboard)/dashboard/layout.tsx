@@ -33,7 +33,7 @@ const layout = async ({ children }: LayoutProps) => {
 
     return (  
       <div className="w-full flex h-screen">
-        <div className="md:hidden">
+        <div className="lg:hidden">
           <MobileChatLayout
             friends={friends}
             session={session}
@@ -41,7 +41,7 @@ const layout = async ({ children }: LayoutProps) => {
             unseenRequestCount={unseenRequestCount}
           />
         </div>
-        <div className="hidden md:flex h-full w-full max-w-xs grow flex-col gap-y-5 owerflow-y-autpo border-r border-gray-200 bg-white px-6">
+        <div className="hidden lg:flex h-full w-full max-w-xs grow flex-col gap-y-5 owerflow-y-autpo border-r border-gray-200 bg-white px-6">
           {friends.length > 0 ? (
             <div className="text-sm font-semibold leading-6 text-gray-400"></div>
           ) : null}
@@ -173,7 +173,7 @@ const layout = async ({ children }: LayoutProps) => {
   } else {
     return (
       <div className="w-full flex h-screen">
-        <div className="hidden md:flex h-full w-full max-w-xs grow flex-col gap-y-5 owerflow-y-autpo border-r border-gray-200 bg-white px-6">
+        <div className="hidden lg:flex h-full w-full max-w-xs grow flex-col gap-y-5 owerflow-y-autpo border-r border-gray-200 bg-white px-6">
           <nav className="flex flex-1 flex-col">
             <ul role="list" className="flex flex-1 flex-col gap-y-7">
               <li className="mt-8 flex items-center  w-full pb-4 gap-x-2 text-base">

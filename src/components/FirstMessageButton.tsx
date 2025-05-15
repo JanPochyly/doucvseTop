@@ -46,9 +46,8 @@ const FirstMessageButton = ({ senderId, teacherId, teacherEmail }: Props) => {
   return (
     <div>
         <Button
-          variant="indigo"
           onClick={() => sendFirstMessage(teacherEmail)}
-          className="bg-indigo-600 hover:bg-indigo-500 text-md"
+          className="w-full sm:w-auto bg-[#0072FA] hover:bg-[#0072FA] hover:text-black rounded-xl transition-colors text-white font-semibold py-2 px-4"
         >
           odeslat zprávu
         </Button>
