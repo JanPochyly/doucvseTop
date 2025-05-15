@@ -115,7 +115,7 @@ const SidebarChatList = ({ friends, sessionId }: SidebarChatListProps) => {
 
 
   return (
-    <ul role="list" className="max-h-[25rem] overflow-y-auto -mx-2 space-y-1">
+    <ul role="list" className="relative z-20 max-h-[25rem] overflow-y-auto space-y-1 px-4 pt-10 sm:pt-6">
       {activeChats
         .sort((a, b) => {
           const timeStampA = lastMessages[a.id]?.timeStamp || 0; // Default to 0 if undefined
@@ -128,7 +128,7 @@ const SidebarChatList = ({ friends, sessionId }: SidebarChatListProps) => {
           return (
             <li key={friend.id}>
               <a
-                className="text-gray-700 hover:text-indigo-600 hover:bg-gray-50 group flex items-center gap-x-3 rounded-mf p-2 text-sm leading-6 font-semibold"
+                className="text-gray-700 hover:text-[#0072FA] group flex items-center gap-x-3 rounded-mf p-2 text-sm leading-6 font-semibold"
                 href={`/dashboard/chat/${chatHrefConstructor(
                   sessionId,
                   friend.id
@@ -149,7 +149,7 @@ const SidebarChatList = ({ friends, sessionId }: SidebarChatListProps) => {
                   </p>
                 </div>
                 {unseenCount > 0 ? (
-                  <div className="bg-indigo-600 font-medium text-xs text-white w-4 h-4 rounded-full flex justify-center items-center">
+                  <div className="bg-[#0072FA]font-medium text-xs text-white w-4 h-4 rounded-full flex justify-center items-center">
                     {unseenCount}
                   </div>
                 ) : null}
