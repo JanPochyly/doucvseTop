@@ -8,7 +8,7 @@ interface Props {
 
 const Subjects = ({ subjects, className = "" }: Props) => {
   return (
-    <div className="flex gap-x-2 flex-wrap">
+    <div className="flex flex-wrap gap-x-2 gap-y-3">
       {subjects.map((subject, index) => (
         <Link
           href={`/dashboard/findTeacher/?faculty=&subject=${subject}&search=`}

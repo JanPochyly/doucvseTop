@@ -97,7 +97,7 @@ export const getAllTeachers = async (
     languages: teacher.languages,
     rating: teacher.rating,
     R: teacher.R,
-    form: teacher.form,
+    tutoringForms: teacher.tutoringForms,
     city: teacher.city
   }))
   return { finalTeachers, totalPages };

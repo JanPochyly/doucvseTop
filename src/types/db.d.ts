@@ -61,6 +61,6 @@ interface teacherR {
   languages: string[],
   rating: number[],
   R: number,
-  form?: string[],
+  tutoringForms?: string[],
   city?: string
 }
